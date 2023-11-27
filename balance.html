@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get User Balance</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<button id="getBalance">Get Balance</button>
+<div id="balance"></div>
+
+<script>
+$("#getBalance").click(function(){
+    var userId = "your_user_id";  // Установите значение user_id, который вы хотите проверить
+    $.get(`/get_balance?user_id=${userId}`, function(data){
+        $("#balance").text("User Balance: " + data.balance);
+    }).fail(function(){
+        $("#balance").text("Error retrieving balance.");
+    });
+});
+</script>
+
+</body>
+</html>
