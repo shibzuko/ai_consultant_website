@@ -16,23 +16,23 @@ document.getElementById("registrationForm").addEventListener("submit", function(
     const parentName = form['parentName'].value;
     const phoneNumber = form['phoneNumber'].value;
     const childrenCount = form['childrenCount'].value;
-
-    // Собираем данные о детях
-    const childrenInfoElements = form.querySelectorAll('.child-info-block');
-    const children = Array.from(childrenInfoElements).map(childBlock => {
-        return {
-            name: childBlock.querySelector('[name="childName[]"]').value,
-            age: childBlock.querySelector('[name="childAge[]"]').value,
-            class: childBlock.querySelector('[name="childClass[]"]').value
-        };
-    });
+//
+//    // Собираем данные о детях
+//    const childrenInfoElements = form.querySelectorAll('.child-info-block');
+//    const children = Array.from(childrenInfoElements).map(childBlock => {
+//        return {
+//            name: childBlock.querySelector('[name="childName[]"]').value,
+//            age: childBlock.querySelector('[name="childAge[]"]').value,
+//            class: childBlock.querySelector('[name="childClass[]"]').value
+//        };
+//    });
 
     // Формируем объект сообщения
     const messageObj = {
         'Parent Name': parentName,
         'Phone Number': phoneNumber,
         'Children Count': childrenCount,
-        'Children Info': children
+//        'Children Info': children
     };
 
     // Преобразуем объект сообщения в строку JSON
