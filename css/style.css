@@ -176,7 +176,7 @@ button:hover {
 }
 
 .remove-child:hover {
-    background-image: url('..icon-cross-mark.png'); /* Путь к изображению крестика при наведении (если есть) */
+    background-image: url('img/pngwing11.png'); /* Путь к изображению крестика при наведении (если есть) */
 }
 
 /* Ваши существующие стили */

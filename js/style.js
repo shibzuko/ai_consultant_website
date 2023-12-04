@@ -27,7 +27,7 @@ document.getElementById('addChild').addEventListener('click', function() {
             <option value="11">11 класс</option>
         </select>
     </div>
-        <img src="../img/pngwing.com.png" class="remove-child" alt="Удалить ребенка" />
+        <img src="img/pngwing11.png" class="remove-child" alt="Удалить ребенка" />
     `;
     childrenInfo.appendChild(newChildDiv);
 });
