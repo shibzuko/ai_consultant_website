@@ -8,7 +8,7 @@ document.getElementById('addChild').addEventListener('click', function() {
         <input type="text" name="childName[]" required placeholder="Исмаил">
 
         <label>Возраст:</label>
-        <input type="number" name="childAge[]" min="4" max="18" required placeholder="7">
+        <input type="number" name="childAge[]" min="4" max="18" required placeholder="14">
 
         <label>Класс:</label>
         <select name="childClass[]">
