@@ -42,7 +42,6 @@ document.getElementById("registrationForm").addEventListener("submit", function(
     tg.sendData(message);
     tg.MainButton.setText("Форма отправлена!");
     tg.MainButton.show();
-    tg.close();
 });
 
 

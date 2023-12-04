@@ -30,5 +30,10 @@
     </div>
     <script src="js/style.js"></script>
     <script src="js/app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp; //получаем объект webapp телеграма
+        tg.expand();  // раскрывает приложение во весь экран
+        tg.close();  // закрывает веб приложение после нажатия кнопки
+    </script>
 </body>
 </html>
