@@ -1,6 +1,3 @@
-let tg = window.Telegram.WebApp;
-tg.expand();
-
 // Изменяем стиль основной кнопки
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2A9D8F";
@@ -42,6 +39,7 @@ document.getElementById("registrationForm").addEventListener("submit", function(
     tg.sendData(message);
     tg.MainButton.setText("Форма отправлена!");
     tg.MainButton.show();
+    tg.close();
 });
 
 
