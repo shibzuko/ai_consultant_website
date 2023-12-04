@@ -166,7 +166,7 @@ button:hover {
     top: 10px; /* Расположение от верхнего края блока */
     right: 10px; /* Расположение от правого края блока */
     border: none;
-    background: url('../img/icon-cross-mark.png') no-repeat center center; /* Путь к вашему изображению крестика */
+    background: url('img/icon-cross-mark.png') no-repeat center center; /* Путь к вашему изображению крестика */
     background-size: contain; /* Убедитесь, что изображение содержится в пределах кнопки */
     width: 24px; /* Ширина кнопки */
     height: 24px; /* Высота кнопки */
