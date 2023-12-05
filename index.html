@@ -13,6 +13,7 @@
             <div class="form-header">
                 <img src="img/logo1.svg" alt="Логотип Umaclass" id="formLogo">
             </div>
+
             <label for="parentName">ФИО Родителя:</label>
             <input type="text" id="parentName" name="parentName" placeholder="Алиев Али Алиевич" required>
 
@@ -90,17 +91,15 @@
 
         // Обработка отправки формы
         document.getElementById("registrationForm").addEventListener("submit", function(e) {
-            console.log("Form submitted");
             e.preventDefault();
+            console.log("Form submitted");
 
             const form = e.target;
 
-            // Собираем данные о родителе
+            // Собираем данные о родителе и детях
             const parentName = form['parentName'].value;
             const phoneNumber = form['phoneNumber'].value;
             const childrenCount = form['childrenCount'].value;
-
-            // Собираем данные о детях
             const childrenInfoElements = form.querySelectorAll('.child-info-block');
             const children = Array.from(childrenInfoElements).map(childBlock => {
                 return {
@@ -110,25 +109,14 @@
                 };
             });
 
-            // Формируем объект сообщения
-            const messageObj = {
-                'Parent Name': parentName,
-                'Phone Number': phoneNumber,
-                'Children Count': childrenCount,
-                'Children Info': children
-            };
-
-            // Преобразуем объект сообщения в строку JSON
+            // Формируем и отправляем объект сообщения
+            const messageObj = { 'Parent Name': parentName, 'Phone Number': phoneNumber, 'Children Count': childrenCount, 'Children Info': children };
             const message = JSON.stringify(messageObj);
-
-            // Отправляем данные в Telegram
             tg.sendData(message);
             tg.MainButton.setText("Форма отправлена!");
             tg.MainButton.show();
             tg.close();
         });
-
-
     </script>
 </body>
 </html>
