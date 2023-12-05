@@ -1,3 +1,129 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="ru">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Umaclass</title>-->
+<!--    <link rel="stylesheet" href="css/style.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container">-->
+<!--        <form id="registrationForm">-->
+<!--&lt;!&ndash;            <h1>Анкета для Umaclass</h1>&ndash;&gt;-->
+<!--            <div class="form-header">-->
+<!--                <img src="img/logo1.svg" alt="Логотип Umaclass" id="formLogo">-->
+<!--            </div>-->
+
+<!--            <label for="parentName">ФИО Родителя:</label>-->
+<!--            <input type="text" id="parentName" name="parentName" placeholder="Алиев Али Алиевич" required>-->
+
+<!--            <label for="phoneNumber">Номер Телефона:</label>-->
+<!--            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+7 900 123 45 67" required>-->
+
+<!--            <label for="childrenCount">Количество Детей:</label>-->
+<!--            <input type="number" id="childrenCount" name="childrenCount" min="1" placeholder="1" required>-->
+
+<!--            <div id="childrenInfo"></div>-->
+
+<!--            <button type="button" id="addChild">Добавить Ребенка</button>-->
+<!--            <button type="submit">Отправить</button>-->
+<!--        </form>-->
+<!--    </div>-->
+
+<!--    <script src="https://telegram.org/js/telegram-web-app.js"></script>-->
+<!--    <script>-->
+<!--                // Добавление нового ребенка-->
+<!--        document.getElementById('addChild').addEventListener('click', function() {-->
+<!--            var childrenInfo = document.getElementById('childrenInfo');-->
+<!--            var newChildDiv = document.createElement('div');-->
+<!--            newChildDiv.classList.add('child-info-block');-->
+<!--            newChildDiv.innerHTML = `-->
+<!--                <label>Имя Ребенка:</label>-->
+<!--                <input type="text" name="childName[]" required placeholder="Исмаил">-->
+
+<!--                <label>Возраст:</label>-->
+<!--                <input type="number" name="childAge[]" min="4" max="18" required placeholder="14">-->
+
+<!--                <label>Класс:</label>-->
+<!--                <select name="childClass[]">-->
+<!--                    <option value="">Выберите класс</option>-->
+<!--                    <option value="preschool">Дошкольник</option>-->
+<!--                    <option value="1">1 класс</option>-->
+<!--                    <option value="2">2 класс</option>-->
+<!--                    <option value="3">3 класс</option>-->
+<!--                    <option value="4">4 класс</option>-->
+<!--                    <option value="5">5 класс</option>-->
+<!--                    <option value="6">6 класс</option>-->
+<!--                    <option value="7">7 класс</option>-->
+<!--                    <option value="8">8 класс</option>-->
+<!--                    <option value="9">9 класс</option>-->
+<!--                    <option value="10">10 класс</option>-->
+<!--                    <option value="11">11 класс</option>-->
+<!--                </select>-->
+<!--            </div>-->
+<!--                <img src="img/pngwing11.png" class="remove-child" alt="Удалить ребенка" />-->
+<!--            `;-->
+<!--            childrenInfo.appendChild(newChildDiv);-->
+<!--        });-->
+
+<!--        // Функция для удаления блока ребенка-->
+<!--        document.addEventListener('click', function(e) {-->
+<!--            if (e.target && e.target.classList.contains('remove-child')) {-->
+<!--                e.target.parentNode.remove();-->
+<!--            }-->
+<!--        });-->
+
+
+<!--        // Обработка отправки формы-->
+<!--        document.getElementById('registrationForm').addEventListener('submit', function(e) {-->
+<!--            e.preventDefault();-->
+<!--            // Здесь код для обработки и отправки формы на сервер-->
+<!--            alert('Форма отправлена');-->
+<!--        });-->
+
+<!--    </script>-->
+<!--&lt;!&ndash;    <script src="js/app.js"></script>&ndash;&gt;-->
+<!--    <script>-->
+<!--        let tg = window.Telegram.WebApp;-->
+<!--        tg.expand();-->
+
+<!--        // Изменяем стиль основной кнопки-->
+<!--        tg.MainButton.textColor = "#FFFFFF";-->
+<!--        tg.MainButton.color = "#2A9D8F";-->
+
+<!--        // Обработка отправки формы-->
+<!--        document.getElementById("registrationForm").addEventListener("submit", function(e) {-->
+<!--            e.preventDefault();-->
+<!--            console.log("Form submitted");-->
+
+<!--            const form = e.target;-->
+
+<!--            // Собираем данные о родителе и детях-->
+<!--            const parentName = form['parentName'].value;-->
+<!--            const phoneNumber = form['phoneNumber'].value;-->
+<!--            const childrenCount = form['childrenCount'].value;-->
+<!--            const childrenInfoElements = form.querySelectorAll('.child-info-block');-->
+<!--            const children = Array.from(childrenInfoElements).map(childBlock => {-->
+<!--                return {-->
+<!--                    name: childBlock.querySelector('[name="childName[]"]').value,-->
+<!--                    age: childBlock.querySelector('[name="childAge[]"]').value,-->
+<!--                    class: childBlock.querySelector('[name="childClass[]"]').value-->
+<!--                };-->
+<!--            });-->
+
+<!--            // Формируем и отправляем объект сообщения-->
+<!--            const messageObj = { 'Parent Name': parentName, 'Phone Number': phoneNumber, 'Children Count': childrenCount, 'Children Info': children };-->
+<!--            const message = JSON.stringify(messageObj);-->
+<!--            tg.sendData(message);-->
+<!--            tg.MainButton.setText("Форма отправлена!");-->
+<!--            tg.MainButton.show();-->
+<!--            tg.close();-->
+<!--        });-->
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
+
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -9,7 +135,6 @@
 <body>
     <div class="container">
         <form id="registrationForm">
-<!--            <h1>Анкета для Umaclass</h1>-->
             <div class="form-header">
                 <img src="img/logo1.svg" alt="Логотип Umaclass" id="formLogo">
             </div>
@@ -20,99 +145,48 @@
             <label for="phoneNumber">Номер Телефона:</label>
             <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+7 900 123 45 67" required>
 
-            <label for="childrenCount">Количество Детей:</label>
-            <input type="number" id="childrenCount" name="childrenCount" min="1" placeholder="1" required>
+            <!-- Упрощенные поля для ввода информации о детях -->
+            <label for="childName">Имя Ребенка:</label>
+            <input type="text" id="childName" name="childName" placeholder="Исмаил" required>
 
-            <div id="childrenInfo"></div>
+            <label for="childAge">Возраст:</label>
+            <input type="number" id="childAge" name="childAge" min="4" max="18" required placeholder="14">
 
-            <button type="button" id="addChild">Добавить Ребенка</button>
+            <label for="childClass">Класс:</label>
+            <select id="childClass" name="childClass">
+                <option value="">Выберите класс</option>
+                <!-- Опции классов -->
+            </select>
+
             <button type="submit">Отправить</button>
         </form>
     </div>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-                // Добавление нового ребенка
-        document.getElementById('addChild').addEventListener('click', function() {
-            var childrenInfo = document.getElementById('childrenInfo');
-            var newChildDiv = document.createElement('div');
-            newChildDiv.classList.add('child-info-block');
-            newChildDiv.innerHTML = `
-                <label>Имя Ребенка:</label>
-                <input type="text" name="childName[]" required placeholder="Исмаил">
-
-                <label>Возраст:</label>
-                <input type="number" name="childAge[]" min="4" max="18" required placeholder="14">
-
-                <label>Класс:</label>
-                <select name="childClass[]">
-                    <option value="">Выберите класс</option>
-                    <option value="preschool">Дошкольник</option>
-                    <option value="1">1 класс</option>
-                    <option value="2">2 класс</option>
-                    <option value="3">3 класс</option>
-                    <option value="4">4 класс</option>
-                    <option value="5">5 класс</option>
-                    <option value="6">6 класс</option>
-                    <option value="7">7 класс</option>
-                    <option value="8">8 класс</option>
-                    <option value="9">9 класс</option>
-                    <option value="10">10 класс</option>
-                    <option value="11">11 класс</option>
-                </select>
-            </div>
-                <img src="img/pngwing11.png" class="remove-child" alt="Удалить ребенка" />
-            `;
-            childrenInfo.appendChild(newChildDiv);
-        });
-
-        // Функция для удаления блока ребенка
-        document.addEventListener('click', function(e) {
-            if (e.target && e.target.classList.contains('remove-child')) {
-                e.target.parentNode.remove();
-            }
-        });
-
-
-        // Обработка отправки формы
-        document.getElementById('registrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Здесь код для обработки и отправки формы на сервер
-            alert('Форма отправлена');
-        });
-
-    </script>
-<!--    <script src="js/app.js"></script>-->
-    <script>
         let tg = window.Telegram.WebApp;
         tg.expand();
-
-        // Изменяем стиль основной кнопки
-        tg.MainButton.textColor = "#FFFFFF";
-        tg.MainButton.color = "#2A9D8F";
 
         // Обработка отправки формы
         document.getElementById("registrationForm").addEventListener("submit", function(e) {
             e.preventDefault();
             console.log("Form submitted");
 
-            const form = e.target;
-
-            // Собираем данные о родителе и детях
-            const parentName = form['parentName'].value;
-            const phoneNumber = form['phoneNumber'].value;
-            const childrenCount = form['childrenCount'].value;
-            const childrenInfoElements = form.querySelectorAll('.child-info-block');
-            const children = Array.from(childrenInfoElements).map(childBlock => {
-                return {
-                    name: childBlock.querySelector('[name="childName[]"]').value,
-                    age: childBlock.querySelector('[name="childAge[]"]').value,
-                    class: childBlock.querySelector('[name="childClass[]"]').value
-                };
-            });
+            // Собираем данные о родителе и ребенке
+            const parentName = document.getElementById('parentName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const childName = document.getElementById('childName').value;
+            const childAge = document.getElementById('childAge').value;
+            const childClass = document.getElementById('childClass').value;
 
             // Формируем и отправляем объект сообщения
-            const messageObj = { 'Parent Name': parentName, 'Phone Number': phoneNumber, 'Children Count': childrenCount, 'Children Info': children };
+            const messageObj = {
+                'Parent Name': parentName,
+                'Phone Number': phoneNumber,
+                'Child Name': childName,
+                'Child Age': childAge,
+                'Child Class': childClass
+            };
             const message = JSON.stringify(messageObj);
             tg.sendData(message);
             tg.MainButton.setText("Форма отправлена!");
