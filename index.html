@@ -32,6 +32,8 @@
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand();
         // Добавление нового ребенка
         document.getElementById('addChild').addEventListener('click', function() {
             var childrenInfo = document.getElementById('childrenInfo');
@@ -72,8 +74,7 @@
             }
         });
 
-        let tg = window.Telegram.WebApp;
-        tg.expand();
+
 
         // Изменяем стиль основной кнопки
         tg.MainButton.textColor = "#FFFFFF";
