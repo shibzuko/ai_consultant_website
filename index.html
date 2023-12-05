@@ -97,10 +97,10 @@
             });
 
             const messageObj = {
-                'Parent Name': parentName,
-                'Phone Number': phoneNumber,
-                'Children Count': childrenCount,
-                'Children Info': children
+                'parentName': parentName,
+                'phoneNumber: phoneNumber,
+                'childrenCount': childrenCount,
+                'childrenInfo': children
             };
             tg.sendData(JSON.stringify(messageObj));
             tg.MainButton.setText("Форма отправлена!");
